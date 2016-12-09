@@ -25,3 +25,4 @@ if [ -n "$CI_PULL_REQUEST" ]; then
 	exit 1
     fi
 fi
+echo "End"
