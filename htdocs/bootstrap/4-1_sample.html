@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <title>Bootstrap サンプル</title>
+  <style>
+
+    h3 {
+      border-bottom: solid 1px #CCCCCC;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    .modal-header > h3 {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    i {
+      margin-right: 5px;
+    }
+
+    .container {
+      margin: 45px 15px;
+    }
+    @media (min-width: 768px) {
+	    .container {
+	      width: 750px;
+	    }
+	  }
+	  @media (min-width: 992px) {
+	    .container {
+	      width: 750px;
+	    }
+	  }
+	  @media (min-width: 1200px) {
+	    .container {
+	      width: 750px;
+	    }
+	  }
+
+	  .dropdown-submenu {
+	      position: relative;
+	  }
+  
+	  .dropdown-submenu>.dropdown-menu {
+	      top: 0;
+	      left: 100%;
+	      margin-top: -6px;
+	      margin-left: -1px;
+	      -webkit-border-radius: 0 6px 6px 6px;
+	      -moz-border-radius: 0 6px 6px;
+	      border-radius: 0 6px 6px 6px;
+	  }
+  
+	  .dropdown-submenu:hover>.dropdown-menu {
+	      display: block;
+	  }
+  
+	  .dropdown-submenu>a:after {
+	      display: block;
+	      content: " ";
+	      float: right;
+	      width: 0;
+	      height: 0;
+	      border-color: transparent;
+	      border-style: solid;
+	      border-width: 5px 0 5px 5px;
+	      border-left-color: #ccc;
+	      margin-top: 5px;
+	      margin-right: -10px;
+	  }
+  
+	  .dropdown-submenu:hover>a:after {
+	      border-left-color: #fff;
+	  }
+  
+	  .dropdown-submenu.pull-left {
+	      float: none;
+	  }
+  
+	  .dropdown-submenu.pull-left>.dropdown-menu {
+	      left: -100%;
+	      margin-left: 10px;
+	      -webkit-border-radius: 6px 0 6px 6px;
+	      -moz-border-radius: 6px 0 6px 6px;
+	      border-radius: 6px 0 6px 6px;
+	  }
+  
+	  .carousel-control.left.carousel-bg-none {
+	    background: none;
+	  }
+	  .carousel-control.right.carousel-bg-none {
+	    background: none;
+	  }
+
+    .dropdown-menu-black>li>a:hover {
+      color: #FFF;
+      background-color: #000;
+    }
+
+  </style>
+</head>
+<body>
+
+<!--
+  <div class="container" id="nav-sample">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">NavBar</a>
+          </div>
+          <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#">CodeCamp</a></  li>
+              </ul>
+              <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu 1 <b class="caret"></b></a>
+                      <ul class="dropdown-menu multi-level">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Separated link</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">One more separated link</a></li>
+                          <li class="dropdown-submenu">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown</a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="#">Action</a></li>
+                                  <li class="dropdown-submenu">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown</a>
+                                      <ul class="dropdown-menu">
+                                          <li class="dropdown-submenu">
+                                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown</a>
+                                              <ul class="dropdown-menu">
+                                                  <li><a href="#">Action</a></li>
+                                                  <li><a href="#">Another action</a></li>
+                                                  <li><a href="#">Something else here</a></li>
+                                                  <li class="divider"></li>
+                                                  <li><a href="#">Separated link</a></li>
+                                                  <li class="divider"></li>
+                                                  <li><a href="#">One more separated link</a></li>
+                                              </ul>
+                                          </li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu 2 <b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Separated link</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">One more separated link</a></li>
+                          <li class="dropdown-submenu">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown</a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="#">Action</a></li>
+                                  <li><a href="#">Another action</a></li>
+                                  <li><a href="#">Something else here</a></li>
+                                  <li class="divider"></li>
+                                  <li><a href="#">Separated link</a></li>
+                                  <li class="divider"></li>
+                                  <li class="dropdown-submenu">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown</a>
+                                      <ul class="dropdown-menu">
+                                          <li class="dropdown-submenu">
+                                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown</a>
+                                              <ul class="dropdown-menu">
+                                                  <li><a href="#">Action</a></li>
+                                                  <li><a href="#">Another action</a></li>
+                                                  <li><a href="#">Something else here</a></li>
+                                                  <li class="divider"></li>
+                                                  <li><a href="#">Separated link</a></li>
+                                                  <li class="divider"></li>
+                                                  <li><a href="#">One more separated link</a></li>
+                                              </ul>
+                                          </li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+
+    </div>
+  </div>
+-->
+
+  <div id="dropdown-sample" class="container">
+    <h3><i class="fa fa-check-square-o" style="color: #3b5998;"></i>ドロップダウン</h3>
+    <p>ドロップダウンの実装例(1)</p>
+    <div class="dropdown">
+      <button class="btn btn-info" data-toggle="dropdown">
+        ボタンメニュー
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">メニュー1-1</a></li>
+        <li><a href="#">メニュー1-2</a></li>
+        <li><a href="#">メニュー1-3</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <p>ドロップダウンの実装例(2)</p>
+    <div class="dropdown">
+      <button class="btn btn-info" data-toggle="dropdown">
+        ボタンメニュー
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li class="dropdown-header">ヘッダ</li>
+        <li><a href="#">メニュー1-1</a></li>
+        <li class="divider"></li>
+        <li><a href="#">メニュー1-2</a></li>
+        <li><a href="#">メニュー1-3</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <p>ドロップダウンの実装例(3)</p>
+    <div class="dropdown">
+      <button class="btn btn-info" data-toggle="dropdown">
+        ボタンメニュー
+      </button>
+      <ul class="dropdown-menu dropdown-menu-black">
+        <li><a href="#">メニュー1-1</a></li>
+        <li><a href="#">メニュー1-2</a></li>
+        <li><a href="#">メニュー1-3</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div id="modal-sample" class="container">
+    <h3><i class="fa fa-check-square-o" style="color: #3b5998;"></i>モーダル</h3>
+    <button class="btn btn-info" data-toggle="modal" data-target="#modal1">エラー</button>
+  
+    <div class="modal fade" id="modal1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h3 class="modal-title">エラー</h3>
+          </div>
+          <div class="modal-body">
+            エラーが発生しました
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-dismiss="modal">確認</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <div class="container modal-image-sample">
+    <a class="btn btn-info" href="#" data-toggle="modal" data-target="#image-lg">modal-lg</a>
+    <a class="btn btn-info" href="#" data-toggle="modal" data-target="#image-sm">modal-sm</a>
+    <a class="btn btn-info" href="#" data-toggle="modal" data-target="#image-none">指定なし</a>
+  
+    <div class="modal fade" id="image-lg">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h5 class="modal-title">image01.jpg</h5>
+          </div>
+          <div class="modal-body">
+            <img src="DUMMY.jpg" class="img-responsive" id="modal-image1">
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="modal fade" id="image-sm">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h5 class="modal-title">image02.jpg</h5>
+          </div>
+          <div class="modal-body">
+            <img src="image01.jpg" class="img-responsive" id="modal-image2">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="image-none">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h5 class="modal-title">image03.jpg</h5>
+          </div>
+          <div class="modal-body">
+            <img src="image01.jpg" class="img-responsive" id="modal-image3">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $('#modal-image1').click( function() {
+        $('#image-lg').modal('hide');
+      });
+      $('#modal-image2').click( function() {
+        $('#image-sm').modal('hide');
+      });
+      $('#modal-image3').click( function() {
+        $('#image-none').modal('hide');
+      });
+    </script>
+  </div>
+
+
+  <div class="container">
+    <h3><i class="fa fa-check-square-o" style="color: #3b5998;"></i>カルーセル</h3>
+    <div id="slide1" class="carousel slide" data-ride="carousel1">
+      <ol class="carousel-indicators">
+        <li data-target="#slide1" data-slide-to="0" class="active"></li>
+        <li data-target="#slide1" data-slide-to="1"></li>
+        <li data-target="#slide1" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active"><img src="image01.jpg"></div>
+        <div class="item"><img src="image02.jpg"></div>
+        <div class="item"><img src="image03.jpg"></div>
+      </div>
+      <a class="carousel-control left" href="#slide1" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="carousel-control right" href="#slide1" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+  </div>
+  <script>$('#slide1').carousel()</script>
+
+  <div class="container">
+    <p>キャプションあり</p>
+    <div id="slide2" class="carousel slide" data-ride="carousel2">
+      <ol class="carousel-indicators">
+        <li data-target="#slide2" data-slide-to="0" class="active"></li>
+        <li data-target="#slide2" data-slide-to="1"></li>
+        <li data-target="#slide2" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <a href="#">
+            <img src="image01.jpg">
+            <div class="carousel-caption">
+              <h3>画像のタイトル1</h3><p>画像のコメント</p>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img src="image02.jpg">
+            <div class="carousel-caption"> 
+    　　　　　　<h3>画像のタイトル2</h3><p>画像のコメント</p>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img src="image03.jpg">
+            <div class="carousel-caption"> 
+    　　　　　　<h3>画像のタイトル3</h3><p>画像のコメント</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <a class="carousel-control left" href="#slide2" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="carousel-control right" href="#slide2" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+  </div>
+  <script>$('#slide2').carousel()</script>
+
+  <div class="container">
+    <p>カルーセルの小技(1)</p>
+    <div id="slide3" class="carousel slide" data-ride="carousel3">
+      <ol class="carousel-indicators">
+        <li data-target="#slide3" data-slide-to="0" class="active"></li>
+        <li data-target="#slide3" data-slide-to="1"></li>
+        <li data-target="#slide3" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active"><img src="image01.jpg"></div>
+        <div class="item"><img src="image02.jpg"></div>
+        <div class="item"><img src="image03.jpg"></div>
+      </div>
+    </div>
+  </div>
+  <script>$('#slide3').carousel({interval: 1000})</script>
+  
+  <div class="container">
+    <p>カルーセルの小技(2)</p>
+    <div id="slide4" class="carousel slide" data-ride="carousel4" data-pause="false">
+      <ol class="carousel-indicators">
+        <li data-target="#slide4" data-slide-to="0" class="active"></li>
+        <li data-target="#slide4" data-slide-to="1"></li>
+        <li data-target="#slide4" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active"><img src="image01.jpg"></div>
+        <div class="item"><img src="image02.jpg"></div>
+        <div class="item"><img src="image03.jpg"></div>
+      </div>
+    </div>
+  </div>
+  <script>$('#slide4').carousel()</script>
+
+  <div class="container">
+    <p>カルーセルの小技(3)</p>
+    <div id="slide5" class="carousel" data-ride="carousel5">
+      <ol class="carousel-indicators">
+        <li data-target="#slide5" data-slide-to="0" class="active"></li>
+        <li data-target="#slide5" data-slide-to="1"></li>
+        <li data-target="#slide5" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active"><img src="image01.jpg"></div>
+        <div class="item"><img src="image02.jpg"></div>
+        <div class="item"><img src="image03.jpg"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="tooltip-sample" class="container">
+    <h3><i class="fa fa-check-square-o" style="color: #3b5998;"></i>ツールチップ</h3>
+    <div class="text-center">
+      <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="右に表示">Right</button>
+      <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="left" title="左に表示">Left</button>
+      <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="上に表示">Top</button>
+      <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="下に表示">Buttom</button>
+    </div>
+    <script>
+    $('[data-toggle=tooltip]').tooltip();
+    </script>
+  </div>
+  
+
+  <div id="accordion-sample" class="container">
+    <h3><i class="fa fa-check-square-o" style="color: #3b5998;"></i>アコーディオン</h3>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading" id="headingOne">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+              １月の定休日
+            </a>
+          </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse in">
+          <div class="panel-body">
+            ８日、２２日
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" id="headingTwo">
+          <h4 class="panel-title">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+              ２月の定休日
+            </a>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+          <div class="panel-body">
+            １２日、２６日
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-bottom: 120px;">
+    <button class="btn btn-info" data-toggle="collapse" data-target="#collapseButton">ボタン</button>
+    <a class="btn btn-info" data-toggle="collapse" href="#collapseLink">リンク</a>
+  
+    <div class="collapse" id="collapseButton">
+      <div class="well">
+        ボタンがクリックされたら表示する内容
+      </div>
+    </div>
+  
+    <div class="collapse" id="collapseLink">
+      <div class="well">
+        リンクがクリックされたら表示する内容
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

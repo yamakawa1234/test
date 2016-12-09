@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <style type="text/css">
+table, tr, td {
+    border: solid 1px;
+}
+
+td {
+    padding: 5px;
+}
+
+.even {
+    /*background-color: #F5F5F5;*/
+    background-color: #000000;
+}
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        $(document).ready(
+        function() {
+        //alert("readyまでok");
+        //計算式
+        var num1 = 1;
+        var num2 = 1;
+        var prod = 0; //積
+        
+        //リスト
+        var workList = ""; //作業用
+        var outList = ""; //作業用
+
+        for(num2 = 1; num2 <= 9; num2++) {
+            for(num1 = 1; num1 <= 9; num1++) {
+                prod = num1 * num2;
+                switch(num1) {
+                    case 1 :
+                        workList = "<tr><td>" + num1 + "*" + num2 + "=" + prod + "</td>";
+                        break;
+                    case 9 :
+                        workList = "<td>" + num1 + "*" + num2 + "=" + prod + "</td></tr>";
+                        break;
+                    default :
+                        workList = "<td>" + num1 + "*" + num2 + "=" + prod + "</td>";
+                }
+            //$(workList).appendTo("#matrix");
+            //if(0 === (num1 + num2) % 2) {
+            //    $(workList).find("td").addClass("even");
+            //} else {
+            //    //何もしない
+            //}
+            outList += workList;
+            workList = "";
+            }
+        $(outList).appendTo("#matrix");
+        //$("#matrix").find("td").addClass("even");
+        //$(workList).find("td").addClass("even");
+        //$("td").addClass("even");
+        outList = "";
+        }
+    }
+    );
+    </script>
+</head>
+<body>
+    <table id="matrix">
+        <caption>九九表</caption>
+    </table>
+</body>
+</html>

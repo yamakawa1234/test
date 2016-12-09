@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>2秒毎に先頭から1文字ずつ表示</title>
+    <style type="text/css">
+        body {
+            width: 1000px;
+        }
+        input {
+            float: left;
+        }
+        button {
+            float: left;
+            margin-left: 5px;
+    </style>
+    <script>
+        var j;
+        var text = 'abc'; //文字列
+        var max = 2;
+        var index1 = 0; //文字列書き出しループ用
+
+        
+        function start() {
+            alert('start');
+            index1 = 0;
+            j = setInterval(write_element, 100);
+        }
+        
+        function write_element() {
+            alert('index1:' + index1);
+            
+             if (index1 >= 3) {
+                clearInterval(j);
+            } else {
+                index1 = index1 + 1;
+            }
+        }
+        
+        window.onload = function() {
+            //alert("window.onloadまで構文エラーなし");
+            var view = window.document.getElementById('view');
+            view.addEventListener('click', start, false);
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input id="id_textbox" type="text" name="text" value="順番に文字を表示">
+    </form>        
+        <button id="view">1文字ずつ表示</button>
+    <div id="result"></div>
+</body>
+</html>

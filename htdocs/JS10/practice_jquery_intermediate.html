@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <style type="text/css">
+table, tr, td {
+    border: solid 1px;
+}
+
+td {
+    padding: 5px;
+}
+
+.even {
+    background-color: #F5F5F5;
+}
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        $(document).ready(
+        function() {
+        //alert("readyまでok");
+        //計算式
+        var num1 = 1;
+        var num2 = 1;
+        var prod = 0; //積
+        
+        //リスト
+        var workList = ""; //作業用
+        var outList = ""; //作業用
+
+        for(num2 = 1; num2 <= 9; num2++) {
+            outList += "<tr>";
+            for(num1 = 1; num1 <= 9; num1++) {
+                workList = "";
+                prod = num1 * num2;
+                if(0 === (num1 + num2) % 2) {
+                    //$("#matrix").find("td").addClass("even");←どう使えば良いのか？？？
+                    workList += "<td class=even>";
+                } else {
+                    workList += "<td>";
+                }
+                workList += num1 + "*" + num2 + "=" + prod + "</td>";
+                outList += workList;
+                workList = "";
+            }
+        outList += "</tr>";
+        $(outList).appendTo("#matrix");
+        outList = "";
+        }
+    }
+    );
+    </script>
+</head>
+<body>
+    <table id="matrix">
+        <caption>九九表</caption>
+    </table>
+</body>
+</html>

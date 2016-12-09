@@ -1,0 +1,91 @@
+body {
+    width: 700px;
+}
+
+footer {
+    clear: both;
+}
+
+li {
+    /*
+    display: box;
+    text-align: center;
+    line-height: 45px;
+    */
+    list-style:none;
+}
+
+a{
+    /*
+    margin: 15px auto;    
+    height: 50px;
+    */
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    width: 150px;
+    float: left;
+    background-color: #a9a9a9;
+    border: solid 1px;
+    padding: 10px 0px;
+}
+
+ul{
+    /*
+    横幅を変えたくない場合は、親要素にてwidthを指定
+    */
+    padding-left: 0px;
+}
+
+.maxhp{
+    width: 430px;
+    height: 40px;
+    float: left;
+    background-color: #00bfff;
+    /*
+    高さの絶対値を入力する
+    */
+    position: absolute;
+    top: 380px;
+    left: 0px;
+}
+
+.nowhp{
+    width: 300px;
+    height: 30px;
+    background-color: #7fffd4;
+    position: absolute;
+    top: 385px;
+    left: 0px;
+}
+.maxhp2{
+    width: 430px;
+    background-color: #00bfff;
+    /*
+    位置はpaddingで調整
+    */
+    padding: 5px 0px;
+}
+
+.nowhp2{
+    width: 300px;
+    height: 30px;
+    background-color: #7fffd4;
+    
+}
+
+.clearfix:after{
+            content: "."; 
+            display: block; 
+            height: 0; 
+            font-size:0;	
+            clear: both; 
+            visibility:hidden;
+}
+.clearfix{
+            display: inline-block;} 
+
+            /* Hides from IE Mac \*/
+            * html .clearfix {height: 1%;}
+            .clearfix{display:block;}
+            /* End Hack */ 

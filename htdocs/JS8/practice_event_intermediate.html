@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>2秒毎に先頭から1文字ずつ表示</title>
+    <style type="text/css">
+        body {
+            width: 1000px;
+        }
+        input {
+            float: left;
+        }
+        button {
+            float: left;
+            margin-left: 5px;
+        }
+        #result {
+            clear: both;
+        }
+    </style>
+    <script>
+        //宣言部
+        var i = 0;
+        var j;
+        var len = 0;
+        var index1 = 0; //文字列書き出しループ用
+        var text = "";
+        var max = 0;
+        var result;
+        var display = "";
+
+        function get_element() {
+            
+            display +=  text.charAt(index1);
+            result.innerHTML = display;
+
+            if(index1 >= max) {
+                clearInterval(j);
+            } else {
+                //何もしない
+            }
+            index1 = index1 + 1;
+        }
+        
+        function start() {
+            index1 = 0;
+            //初期手続き
+            text = document.getElementById('id_textbox').value;
+
+            //文字数取得
+            len　= text.length;
+            max = len - 1;
+            result = document.getElementById('result');
+
+            j = setInterval(get_element, 1000);
+        }
+        
+        window.onload = function() {
+            var view = window.document.getElementById('view');
+            view.addEventListener('click', start, false);
+        }
+        
+    </script>
+</head>
+<body>
+    <form>
+        <input id="id_textbox" type="text" name="text" value="順番に文字を表示">
+    </form>    
+    <button id="view">1文字ずつ表示</button>
+    <div id="result"></div>
+</body>
+</html>

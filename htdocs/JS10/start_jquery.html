@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>カウントダウンタイマー</title>
+<style type="text/css">
+    #wrapper {
+        width: 300px;
+        height: 200px;
+        border: solid 1px #000000;
+        background-color: #000000;
+        border-radius: 10px;
+        background: -webkit-gradient(linear, left top, right bottom,
+        from(#a9a9a9), to(#000000))
+    }
+    
+    #timer-box {
+        width: 200px;
+        height: 120px;
+        border: solid 5px #000000;
+        background-color: #dcdcdc;
+        border-radius: 10px;
+        font-size: 35px;
+        margin: 10px auto;
+        text-align: center;
+    }
+    
+    #wrapper #button {
+        margin: 10px auto;
+        text-align: center;
+    }
+    
+</style>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    //宣言部
+    var i; //clearInterval用
+    var time = 180; //タイマーの表示時刻
+    var minutes = 3; //分
+    //ゼロサプレスしないようにするためには？
+    var second =　00; //秒
+    var display = "";
+    var timer;
+    
+    //課題
+    //変数timeの値に応じて、画面更新時とリセット時に設定した値（初期値）
+    //を表示できるよう改良する
+    
+    //スタート
+    function startFun() {
+        i = setInterval(countFun, 10);
+    }
+    /*//ストップ
+    function stopFun() {
+        clearInterval(i);
+    }
+    //リセット
+    function resetFun() {
+        clearInterval(i);
+        initialization();
+    }*/
+    //カウントダウン
+    function countFun() {
+        if(time > 0) {
+            time = time - 1;
+            minutes = 0;
+            second = 0;
+            //Math.follr = 小数点切り捨て
+            minutes = Math.floor(time / 60);
+            second = time % 60;
+            minutes = "0" + String(minutes);
+            second = "0" + String(second);
+            //substr(-n) = 最後の文字からn文字分を取得
+            display = minutes.substr(-2) + ":" + second.substr(-2);
+            //timer.innerHTML = display;
+            timer.html(display);
+            timer.css('color', 'black');
+        } else {
+            timer.html("Time UP!");
+            //timer.innerHTML = "Time UP!";
+            //timer.style.color = "red";
+            timer.css('color', 'red');
+            clearInterval(i);
+        }
+    }
+    //初期化
+    function initialization() {
+        time = 180;
+        minutes = 0;
+        second = 0;
+        minutes = Math.floor(time / 60);
+        second = time % 60;
+        minutes = "0" + String(minutes);
+        second = "0" + String(second);
+        //substr(-n) = 最後の文字からn文字分を取得
+        display = minutes.substr(-2) + ":" + second.substr(-2);
+        //timer.innerHTML = display;
+        //timer.style.color = "black";
+        timer.html(display);
+        //timer.style.color = "black";
+        timer.css('color', 'black');
+
+    }
+    
+    $(document).ready(
+        function() {
+        //timer = document.getElementById('timer');
+        timer = $('#timer');
+        initialization();
+        //スタート
+        $('#start').click(startFun);
+        /*//ストップ
+        $('#stop').click(stopFun);
+        //リセット
+        $('#reset').click(resetFun);*/
+        }
+    );
+    
+</script>
+</head>
+<body>
+<div id=wrapper>
+    <div id=timer-box>
+        <p id=timer></p>
+    </div>
+    <div id="button">
+        <button id="start">スタート</button>
+        <button id="stop">ストップ</button>
+        <button id="reset">リセット</button>
+    </div>
+</div>
+</body>
+</html>

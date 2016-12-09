@@ -1,0 +1,253 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #f5f5dd;
+}
+
+li {
+    list-style:none;
+}
+
+ul {
+    padding-left: 0px;
+}
+
+li a{
+    text-decoration: none;
+    display: block;
+}
+
+header {
+    padding: 10px 0px 0px 0px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #cccccc;
+}
+
+header input{
+    float: right;
+}
+
+header img{
+    float: left; 
+}
+
+header h2{
+    clear: both;
+    float: left; 
+    color: #664433;
+}
+
+header ul{
+    clear: both;
+    overflow: hidden;
+    padding: 5px 0px;
+    margin-bottom: 0px;
+}
+
+header li{
+    float: left;
+    width: 192px;
+    border-right: 1px solid #cccccc;
+    box-sizing: border-box;
+    text-align: center; 
+}
+
+header li a{
+    color: #664433;
+    text-align: center;
+    padding: 3px;
+    margin: 1px 0px;
+}
+
+header li:last-child {
+    border-right: none;
+}
+
+div#wrapper h2 {
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 50px/50px;
+    background-color: #99bb22;
+    padding: 5px;
+}
+
+div#wrapper h2 img{
+    padding: 0px 5px;
+}
+
+div#topic-box img {
+    float: left;
+}
+
+.text-box {
+    float: left;
+    width: 280px;
+    font-size: 14px;
+    text-indent: 1.0em;
+    margin-left: 20px;
+}
+
+article a {
+    font-size: 18px;
+    color: #fc8833;
+    clear: both;
+    float: right;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+article a img {
+    margin-top: 5px;
+    width: 18px;
+    height: 18px;
+}
+
+#recommended-box h3 {
+    color: #664433;
+    margin-top: 0px;
+}
+
+.recipe-box {
+    margin: 0px 10px 10px 0px;
+    padding: 10px 10px 0px;
+    width: 180px ;
+    background-color: #ffffff;
+}
+
+div.recipe-box li {
+    border-bottom: 1px dotted #cccccc;
+    /*                                     左   上*/
+    background: url(./arrow.png) no-repeat 0px 3px;
+    padding-left: 20px;
+}
+div.recipe-box li:last-child {
+    border-bottom: none;
+}
+
+div.recipe-box a {
+    color: #000000;
+}
+
+.common-recipe {
+    font-size: 8px;
+    width: 98px;
+    float: left;
+    margin: 5px;
+}
+
+footer {
+    clear: both;
+    background-color: #ffffff;
+    border-top: 1px solid #cccccc;
+}
+
+footer p{
+    margin: 0px;
+}
+
+nav {
+    float: left;
+}
+
+article {
+    float: left;
+}
+
+.clearfix:after {
+        content: "."; 
+        display: block; 
+        height: 0; 
+        font-size:0;	
+        clear: both; 
+        visibility:hidden;
+}
+.clearfix{
+    display: inline-block;} 
+
+    /* Hides from IE Mac \*/
+    * html .clearfix {height: 1%;}
+    .clearfix{display:block;}
+    /* End Hack */ 
+
+footer ul {
+    clear: both;
+    overflow: hidden;
+    width: 720px;
+    margin: 10px auto;
+}
+
+#link-box {
+    width: 960px;
+    margin: 0px auto;
+}
+
+footer li {
+    float: left;
+    width: 180px;
+    border-right: 1px solid #cccccc;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+footer li:last-child {
+    border-right: none;
+}
+
+#copy {
+    width: 960px;
+    text-align: center;
+
+}
+
+div#topic-box a {
+    background: url(./arrow.png) no-repeat 0px 3px;
+    background-size: 20px;
+    padding-left: 20px;
+}
+
+div#recommended-box a {
+    background: url(./arrow.png) no-repeat 0px 3px;
+    background-size: 20px;
+    padding-left: 20px;
+}
+
+#wrapper {
+    width: 960px;
+    margin: 0px auto;
+}
+
+
+#header-box {
+    width: 960px;
+    margin: 0px auto;
+}
+
+#topic-img {
+    float: left;
+}
+
+#new-recipe {
+    width: 546px; 
+    height: 200px;
+    margin: 0px 20px 10px 10px ;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+#topic-box {
+    width: 546px; 
+    margin: 10px ;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+#recommended-box {
+    width: 546px; 
+    margin: 10px ;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+#recommended-box img {
+    float: left;
+}

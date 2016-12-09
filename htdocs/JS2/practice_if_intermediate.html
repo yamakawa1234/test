@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>if&amp;論理演算子</title>
+</head>
+<body>
+    <script>
+        //var rand1 = Math.floor(Math.random() * 101);
+        //var rand2 = Math.floor(Math.random() * 101);
+        //var rand3 = Math.floor(Math.random() * 101);
+
+        var rand1 = 1
+        var rand2 = 1
+        var rand3 = 0
+        
+        document.write('<p>rand1: ' + rand1 + '</p>');
+        document.write('<p>rand2: ' + rand2 + '</p>');
+        document.write('<p>rand3: ' + rand3 + '</p>');
+        
+        switch (true){
+            case rand1 > rand2:
+                switch (true){
+                    case rand1 > rand3:
+                        document.write('<p>一番値が大きいのはrand1です</p>');
+                        break;
+                    case rand1 < rand3:
+                        document.write('<p>一番値が大きいのはrand3です</p>');
+                        break;
+                    case rand1 === rand3:
+                        document.write('<p>一番値が大きいのはrand1とrand3です</p>');
+                        break;
+                }
+                break;
+            case rand1 < rand2:
+                switch (true){
+                    case rand2 > rand3:
+                        document.write('<p>一番値が大きいのはrand2です</p>');
+                        break;
+                    case rand2 < rand3:
+                        document.write('<p>一番値が大きいのはrand3です</p>');
+                        break;
+                    case rand2 === rand3:
+                        document.write('<p>一番値が大きいのはrand2とrand3です</p>');
+                        break;
+                }
+                break;
+            case rand1 === rand2:
+                switch (true){
+                    case rand1 > rand3:
+                        document.write('<p>一番値が大きいのはrand1とrand2です</p>');
+                        break;
+                    case rand1 < rand3:
+                        document.write('<p>一番値が大きいのはrand3です</p>');
+                        break;
+                    case rand1 === rand3:
+                        document.write('<p>3つは同じ値です</p>');
+                        break;
+                }
+                break;
+        }
+    </script>
+</body>
+</html>

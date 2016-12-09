@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2-5</title>
+ 
+    <!-- 以下にBootstrap用のCSSを記述します -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .row div{
+        height: 150px;
+    }
+    </style>
+   </head>
+   <body>
+    <div class="container">
+    <h1>pushを使って階段を作成する</h1>
+    <div class="row">
+        <div class="col-md-1" style="background: red;"></div>
+        <div class="col-md-1 col-md-push-10" style="background: red;"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2" style="background: yellow;"></div>
+        <div class="col-md-2 col-md-push-8" style="background: yellow;"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3" style="background: green;"></div>
+        <div class="col-md-3 col-md-push-6" style="background: green;"></div>
+    </div>
+    </div>
+    <div class="container">
+    <h1>pull,pushを使ってAを一番右、Bを一番左、Cを真ん中になる様に再現する</h1>
+    <div class="row">
+        <div class="col-md-4 col-md-push-8" style="background: red;">A</div>
+        <div class="col-md-5 col-md-pull-4" style="background: yellow;">B</div>
+        <div class="col-md-3 col-md-pull-4" style="background: green;">C</div>
+    </div>
+    </div>
+    <div class="panel panel-default">
+    <div class="panel-heading">パネルのヘッダー</div>
+    <div class="panel-body"> パネルの内容 </div>
+    <div class="panel-footer">パネルのフッター</div>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- 以下にBootstrap用のJavaScriptを記述します -->
+    <script src="../js/bootstrap.min.js"></script>
+    
+   </body>
+</html>

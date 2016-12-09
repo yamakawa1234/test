@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>要素の作成・追加</title>
+    <style type="text/css">
+        body {
+            width: 1000px;
+        }
+        p {
+            float: left;
+            margin-top: 0px;
+        }
+        input {
+            float: left;
+        }
+        button {
+            float: left;
+            margin-left: 5px;
+        }
+        #box {
+            clear: both;
+        }
+    </style>
+    <script>
+        function onButtonClic() {
+            target = document.getElementById("box");
+            target.innerText = document.input.id_textbox.value;
+        }
+        function add_element() {
+            // inputの要素を取得
+            alert("ボタンが押されました");
+            var textbox = document.getElementById('id_textbox');
+            var urlbox = document.getElementById('id_urlbox');
+            var element_p = document.createElement('a');
+            // 作成したp要素の内容を設定
+            element_p.innerHTML = textbox.value;
+            element_p.href= urlbox.value;
+            
+            var box = document.getElementById('box');
+            // div要素に作成したp要素を追加
+            box.appendChild(element_p);
+        }
+ 
+        window.onload = function() {
+            alert("ボタンが押されました2");
+            var add = window.document.getElementById('add');
+            add.addEventListener('click', add_element, false);
+        }
+    </script>
+</head>
+<body>
+    <p>リンク名:</p>
+    <form>
+        <input id="id_textbox" type="text" name="name">
+    </form>    
+    <p>URL:</p>
+     <form>
+        <input id="id_urlbox" type="text" name="url">
+    </form>   
+    <button id="add">リンク追加</button>
+    <div id="box"></div>
+</body>
+</html>

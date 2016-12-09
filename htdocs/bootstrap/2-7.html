@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2-5</title>
+ 
+    <!-- 以下にBootstrap用のCSSを記述します -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .row div{
+        height: 150px;
+    }
+    </style>
+   </head>
+   <body>
+    <h1>スマホ表示時のみAを非表示にする</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 hidden-xs bg-info">A</div>
+        <div class="col-md-6" style="background: #CFC;">B</div>
+        <div class="col-md-4" style="background: #6CC;">C</div>
+    </div>
+</div>
+<h1>Aは767px以下、Bは992px～1199px時、Cは768px～991px時に表示</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 visible-xs" style="background: #FCC;">A</div>
+        <div class="col-md-6 visible-md" style="background: #CFC;">B</div>
+        <div class="col-md-4 visible-sm" style="background: #6CC;">C</div>
+    </div>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- 以下にBootstrap用のJavaScriptを記述します -->
+    <script src="../js/bootstrap.min.js"></script>
+   </body>
+</html>

@@ -1,0 +1,27 @@
+#large_block {
+    width: 500px;
+    height: 200px;
+    border: solid 2px;
+}
+ 
+.blockA {
+    width: 200px;
+    height: 100px;
+    background-color: #ff0000;
+    float: left;
+}
+ 
+.blockB {
+    width: 200px;
+    height: 50px;
+    background-color: #00ff00;
+    float: left;
+}
+ 
+.blockC {
+    width: 200px;
+    height: 50px;
+    background-color: #0000ff;
+    /* float: left; */
+    clear: both;
+}

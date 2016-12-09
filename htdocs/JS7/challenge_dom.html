@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>challenge_dom</title>
+</head>
+<body>
+    <div id="large">
+        <div id="box1">1行目(赤文字)</div>
+        <div id="box2">2行目(白文字)</div>
+    </div>
+    <script>
+        // ここに追記
+        var large = document.getElementById('large'); // id="large"の要素を取得
+        var box1 = document.getElementById('box1'); // id="box1"の要素を取得
+        var box2 = document.getElementById('box2'); // id="box2"の要素を取得
+
+        large.style.width = '1000px'; // id="large"の要素内容を変更 
+        large.style.backgroundColor = '#000000'; // id="large"の要素内容を変更 
+        box1.innerHTML = '文字色は赤、文字サイズは24p'; // id="box1"の要素内容を変更
+        box1.style.color = '#ff0000'; // id="box1"の要素内容を変更
+        box1.style.fontSize = '24px'; // id="box1"の要素内容を変更
+        box2.innerHTML = '文字色は白、文字サイズはデフォルト'; // id="box1"の要素内容を変更
+        box2.style.color = '#ffffff'; // id="box2"の要素CSSを変更
+    </script>
+</body>
+</html>

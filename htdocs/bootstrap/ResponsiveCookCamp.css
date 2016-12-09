@@ -1,0 +1,153 @@
+body {
+    font-size: 14px;
+    line-height: 1.42857143;
+    margin: 0;
+}
+
+h2 {
+    border-bottom: solid 2px #D3C9C5;
+    padding-bottom: 5px;
+    padding-left: 21px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    background-image: url(./pic/icon.png);
+    background-size: 16px 16px;
+}
+
+@media (max-width: 767px){
+    .logo {
+        width: 120px;
+        height: auto;
+        margin-top: 10px;
+    }
+}
+
+.list-group-item, h2 {
+    background-repeat:no-repeat;
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+}
+
+h2, h3 {
+    color: #643;
+}
+
+div {
+    display: block;
+}
+
+.navbar-header {
+    margin-top: -42px;
+}
+
+.navbar-nav {
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    float: none;
+}
+
+.navbar-default {
+    margin-bottom: 0px;
+}
+
+.brand img {
+    height: 50%;
+    width: 50%;
+}
+
+.container {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.carousel-inner img {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.navbar-tab li {
+    border-left: dotted 1px #ccc;
+}
+
+.navbar-tab li:first-child {
+    border-left:none;
+}
+
+.clearfix:after {
+        content: "."; 
+        display: block; 
+        height: 0; 
+        font-size:0;	
+        clear: both; 
+        visibility:hidden;
+}
+
+.clearfix{
+    display: inline-block;} 
+
+    /* Hides from IE Mac \*/
+    * html .clearfix {height: 1%;}
+    .clearfix{display:block;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.input-group {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav>li {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    	border-right: solid 1px #CCC
+    }
+    
+    .navbar-nav>li:last-child {
+        border-right: none;
+    }
+    
+    a.list-group-item {
+        border-top: dashed 1px #CCC;
+    }
+    
+    a.list-group-item:first-child {
+        border-top: none;
+    }
+}
+
+.list-group-item {
+    border: none;
+    background-image: url(./pic/arrow.png);
+    background-size: 6px 10px;
+    padding-left: 15px;
+    background-position: 5px center;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+footer {
+    margin-top: 10px;
+    border-top: solid 1px #CCC
+}

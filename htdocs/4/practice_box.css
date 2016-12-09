@@ -1,0 +1,44 @@
+/*
+authoer:Ryutaro Yamakawa
+data:2015/12/11
+function:Self-Introduction
+*/
+
+div {
+    border: solid 3px #fffacd;
+    /*
+    margin-left:150px;
+    margin-right:150px;
+    */
+    width: 500px;
+    margin:0px auto;
+
+    padding: 10px;
+}
+h2 {
+    border: solid #fffacd;
+    background-color: #fffacd;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+dl {
+    border: solid 3px #fffacd;
+    margin-top: 0px;
+}
+dt{
+    border-bottom: dotted 3px #fffacd;
+    margin-right:5px;
+    margin-left:5px;
+
+}
+p {
+    border: solid 3px #fffacd;
+    margin-top: 0px;
+}
+a {
+    background-color: #fffacd;
+    border: solid 3px #d3d3d3;
+    text-align: center;
+    display: block;
+    margin:10px 0px 10px 0px;
+} 

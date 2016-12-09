@@ -1,0 +1,28 @@
+body {
+    font-size:16px;
+}
+h1 {
+    font-size:24px;
+    color: #0000ff;
+    background-color: #87cefa;
+    text-align: center;
+    border-top: dotted  3px #0000ff;
+    border-bottom: dotted 3px #0000ff;
+}
+p span{
+    font-size:18px;
+    color: #ff0000;
+}
+a {
+    color: #ff7f50;
+}
+li span{
+    color: #ff0000;
+}
+/*  font-size:24px;
+    color: #ff0000;
+    background-color: #87cefa;
+    text-align: center;
+    border-top: dashed 3px #ffffff;
+    border-bottom: dashed 3px #ffffff;
+*/

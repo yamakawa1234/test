@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2-5</title>
+ 
+    <!-- 以下にBootstrap用のCSSを記述します -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .row div{
+        height: 150px;
+    }
+    </style>
+   </head>
+   <body>
+       <div class="container">
+    <h1>カラムを左にずらしたい場合は「col-xx-pull-NN」を使う</h1>
+    <div class="row">
+        <div class="col-md-4" style="background: #FCC;">pullを使用していない場合の表示</div>
+    </div>
+ 
+    <div class="row">
+        <div class="col-md-4 col-md-pull-4" style="background:  #CFC;">pullを使用した場合の表示</div>
+    </div>
+</div>
+<div class="container">
+    <h1>カラムを右にずらしたい場合は「col-xx-push-NN」を使う</h1>
+    <div class="row">
+        <div class="col-md-4" style="background: #FCC;">pushを使用していない場合の表示</div>
+    </div>
+ 
+    <div class="row">
+        <div class="col-md-4 col-md-push-4" style="background:  #CFC;">pushを使用した場合の表示</div>
+    </div>
+</div>
+<h1>メイン表示とサイドバー表示を左右入れ替える</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-push-4" style="background: #FCC;">メイン表示</div>
+        <div class="col-md-4 col-md-pull-8" style="background: #CFC;">サイドバー表示</div>
+    </div>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- 以下にBootstrap用のJavaScriptを記述します -->
+    <script src="../js/bootstrap.min.js"></script>
+   </body>
+</html>

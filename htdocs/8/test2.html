@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML5</title>
+        <style>
+            div{
+                background-color: gray;
+            }
+            p {
+                height: 100px;
+                border: solid 1px;
+                float: left;
+            }
+            h2 {
+                margin-top: 100px;
+                clear: both;
+            }
+
+            .clearfix:after{
+            content: "."; 
+            display: block; 
+            height: 0; 
+            font-size:0;	
+            clear: both; 
+            visibility:hidden;
+}
+	
+.clearfix{
+            display: inline-block;} 
+
+            /* Hides from IE Mac \*/
+            * html .clearfix {height: 1%;}
+            .clearfix{display:block;}
+            /* End Hack */ 
+
+        </style>
+    </head>
+    <body>
+        <div class="clearfix">
+            <p>1.ひとつめ</p>
+            <p>2.ふたつめ</p>
+
+        </div>  
+        <h2>hp</h2>
+    </body>
+</html>

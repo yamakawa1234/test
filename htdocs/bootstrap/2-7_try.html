@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2-5</title>
+ 
+    <!-- 以下にBootstrap用のCSSを記述します -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .row div{
+        height: 150px;
+    }
+    </style>
+   </head>
+   <body>
+    <h1>hidden,visidleを使ってXSのボックスはXSサイズの時だけ表示されるように、MDのボックスはMDサイズ以外で表示される様にしてください。またその時MDサイズで表示されるボックスは何か答えてください</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 visible-xs" style="background: red;">XS</div>
+        <div class="col-md-3" style="background: green;">SM</div>
+        <div class="col-md-3 hidden-md" style="background: blue;">MD</div>
+        <div class="col-md-3" style="background: yellow;">LG</div>
+    </div>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- 以下にBootstrap用のJavaScriptを記述します -->
+    <script src="../js/bootstrap.min.js"></script>
+   </body>
+</html>

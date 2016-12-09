@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        function get_strlen() {
+            $.ajax({
+                url: 'http://codecamp.lesson.codecamp.jp/javascript/get_strlen.php',
+                async: false,
+                //async: true,
+                data: 'req=' + $('#req').val(),
+                success: function(data) {
+                    $('#box').append('<p>' + data + '</p>');
+                }
+            });
+        }
+ 
+        $(document).ready(function() {
+            $('#click').click(get_strlen);
+        });
+    </script>
+</head>
+<body>
+    <input type="text" id="req">
+    <button id="click">送信</button>
+    <div id="box"></div>
+</body>
+</html>

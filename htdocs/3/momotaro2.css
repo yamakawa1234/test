@@ -1,0 +1,17 @@
+h1 {
+    color: rgb(150, 150, 150);
+    background-color: #ffffc0;
+    font-size:50px;
+    border: dashed 3px #000000;
+    text-decoration: line-through;
+}
+body {
+    background-color: #ffffe0;
+    font-size: 200%;
+}
+p {
+    font-size: 50%;
+}
+a {
+    text-decoration: line-through;
+}

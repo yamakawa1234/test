@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <title>メニュー</title>
+</head>
+<body>
+    <div class="text-center">
+    <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="右に表示">Right</button>
+    <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="left" title="左に表示">Left</button>
+    <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="上に表示">Top</button>
+    <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="下に表示">Bottom</button>
+    <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="top" data-delay='{ "show": 1000, "hide": 0 }' title="上に表示">Top</button>
+    </div>
+    <script>
+    $('[data-toggle=tooltip]').tooltip();
+</script>
+<div class="panel-group" id="accordion">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#holiday1">
+                    １月の定休日
+                </a>
+            </h4>
+        </div>
+    </div>
+</div>
+ 
+ 
+<div id="holiday1" class="panel-collapse collapse">
+    <div class="panel-body">
+        ８日、２２日
+    </div>
+</div>
+<div class="panel-group" id="accordion">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#holiday2">
+                    ２月の定休日
+                </a>
+            </h4>
+        </div>
+    </div>
+</div>
+ 
+ 
+<div id="holiday2" class="panel-collapse collapse">
+    <div class="panel-body">
+        １９日
+    </div>
+</div>
+</body>
+</html>

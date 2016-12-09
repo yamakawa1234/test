@@ -1,0 +1,41 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(function(){
+
+  max = 10;
+  bingo = new Array();
+  for(i = 1; i <= max; i++) {
+    bingo.push(i);
+  }
+  status = 0;
+
+  $("button").click(function(){
+    if(status == 0) {
+      status = 1;
+      $("button").text("stop");
+      roulette = setInterval(function(){
+        random = Math.floor(Math.random() * bingo.length);
+        number = bingo[random];
+        $("#number").text(number);
+      }, 100);
+    } else {
+      status = 0;
+      $("button").text("Start");
+      clearInterval(roulette);
+      random = Math.floor(Math.random() * bingo.length);
+      result = bingo[random];
+      bingo.splice(random, 1);
+
+      $("#number").text(result);
+      $("#result").append(result + ", ");
+    }
+  });
+});
+</script>
+
+<button>Start</button>
+<div id="number"></div>
+
+<h1>Result</h1>
+<div id="result"></div>

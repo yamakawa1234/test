@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ルーレット</title>
+<style type="text/css">
+    #wrapper {
+        width: 300px;
+        height: 350px;
+        border: solid 1px #000000;
+        background-color: #000000;
+        border-radius: 10px;
+        background: -webkit-gradient(linear, left top, right bottom,
+        from(#7cfc00), to(#008000))
+    }
+    #roulette-box {
+        width: 270px;
+        height: 270px;
+        border: solid 5px #000000;
+        background-color: #ffff00;
+        border-radius: 10px;
+        font-size: 35px;
+        margin: 10px auto;
+        padding: 5px;
+        text-align: center;
+    }
+    #roulette td {
+        width: 60px;
+        height: 60px;
+        /*css3限定、widthにborderを含めない！*/
+        /*box-sizing: border-box;*/
+        border: solid 1px #000000;
+        margin: 0px;
+    }
+    #wrapper #button {
+        margin: 10px auto;
+        text-align: center;
+    }
+    .roulette {
+        background-color: #da70d6;
+    }
+    .comp {
+        background-color: #ffc0cb;
+    }
+</style> 
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    //宣言部
+    var idArray = ['#r1',
+    '#r2',
+    '#r3',
+    '#r4',
+    '#r5',
+    '#r6',
+    '#r7',
+    '#r8',
+    '#r9',
+    '#r10',
+    '#r11',
+    '#r12',
+    '#r13',
+    '#r14',
+    '#r15',
+    '#r16'];
+    
+    var max = 16;
+    var bingo = new Array();
+    for(i = 1; i <= max; i++) {
+        bingo.push(i);
+    }
+    var userStatus = 0;
+    var roulette;
+    var array = 0;
+    
+    //スタート
+    function startFun() {
+        if(userStatus === 1) {
+            alert("すでにスタートしています");
+        } else {
+            userStatus = 1;
+            if(max === bingo.length) {
+                    //nothing    
+                } else {
+                    $(idArray[array]).addClass("comp")
+                }
+            if(0 === bingo.length) {
+                alert("リセットボタンを押してください");
+                userStatus = 0;
+            } else {    
+                roulette = setInterval(function(){
+                    $(idArray[array]).removeClass("roulette");
+                    random = Math.floor(Math.random() * bingo.length);
+                    number = bingo[random];
+                    array = number - 1;
+                    $(idArray[array]).addClass("roulette")
+                }, 100);
+            }
+        }
+    }
+    //ストップ
+    function stopFun() {
+        if(userStatus === 0) {
+            alert("すでにストップしています");
+        } else {
+            userStatus = 0;
+            if(0 === bingo.length) {
+                alert("リセットボタンを押してください");
+            } else {    
+            clearInterval(roulette);
+            bingo.splice(random, 1);
+            }
+        }
+    }
+    //リセット
+    function resetFun() {
+        if(userStatus === 1) {
+            alert("ストップボタンを押してください");
+        } else {
+            userStatus = 0;
+            clearInterval(roulette);
+            bingo = new Array();
+            for(i = 1; i <= max; i++) {
+                bingo.push(i);
+                array = i - 1;
+                $(idArray[array]).removeClass("roulette");
+                $(idArray[array]).removeClass("comp");
+            }
+        }
+    }
+    $(document).ready(
+        function() {
+        //alert('');
+        //スタート
+        $('#start').click(startFun);
+        //ストップ
+        $('#stop').click(stopFun);
+        //リセット
+        $('#reset').click(resetFun);
+        }
+    );
+</script>
+</head>
+<body>
+<div id=wrapper>
+    <div id=roulette-box>
+        <table id="roulette">
+            <tr>
+                <td id="r1">1</td>
+                <td id="r2">2</td>
+                <td id="r3">3</td>
+                <td id="r4">4</td>
+            </tr>
+            <tr>
+                <td id="r5">5</td>
+                <td id="r6">6</td>
+                <td id="r7">7</td>
+                <td id="r8">8</td>
+            </tr>
+            <tr>
+                <td id="r9">9</td>
+                <td id="r10">10</td>
+                <td id="r11">11</td>
+                <td id="r12">12</td>
+            </tr>
+            <tr>
+                <td id="r13">13</td>
+                <td id="r14">14</td>
+                <td id="r15">15</td>
+                <td id="r16">16</td>
+            </tr>
+        </table>
+    </div>
+    <div id="button">
+        <button id="start">スタート</button>
+        <button id="stop">ストップ</button>
+        <button id="reset">リセット</button>
+    </div>
+</div>
+</body>
+</html>

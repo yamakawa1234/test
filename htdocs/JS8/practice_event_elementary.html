@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>実行タイミング</title>
+    <script>
+        /* 課題処理を追加 */
+        //黒ボタン
+        function color_black() {
+        //背景黒の確認用ボタン
+        //alert("背景黒ボタンが押されました");
+        
+        //背景色変化
+        var body = document.getElementsByTagName('body');
+        body[0].style.backgroundColor = '#000000';
+        
+        //文字色変化
+        var p = document.getElementsByTagName('p');
+        p[0].style.color = '#ffffff';
+        }
+        
+        //白ボタン
+        function color_white() {
+        //背景白の確認用ボタン
+        //alert("背景白ボタンが押されました");
+        
+        //背景色変化
+        var body = document.getElementsByTagName('body');
+        body[0].style.backgroundColor = '#ffffff';
+        
+        //文字色変化
+        var p = document.getElementsByTagName('p');
+        p[0].style.color = '#000000';
+        }
+        
+        //ボタンクリック！！！
+        window.onload = function() {
+            //構文確認alert
+            //alert("Hello World !!");
+            
+            var p = document.getElementsByTagName('p');
+            var black = document.getElementById('black');
+            var white = document.getElementById('white');
+            black.addEventListener('click', color_black, false);
+            white.addEventListener('click', color_white, false);
+        }
+    </script>
+</head>
+<body>
+    <p>ボタンクリックにより背景色と文字色を変化</p>
+    <button id="black">背景黒</button>
+    <button id="white">背景白</button>
+</body>
+</html>
